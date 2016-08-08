@@ -1,0 +1,16 @@
+/.bundle
+/vendor/bundler/
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*.log
+/tmp
+/uploads/tmp/
+/config/settings.local.yml
+/config/settings/*.local.yml
+/config/environments/*.local.yml
+/config/secrets.yml
+/config/database.yml
+
+.env
+.pryrc
+.DS_Store
