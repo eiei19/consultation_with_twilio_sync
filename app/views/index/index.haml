@@ -1,0 +1,17 @@
+#IdentityForm
+  %input{type: "text", id: "Identity"}
+  %button#GoToOnline
+    Go
+
+#CallInfo
+  %p.name
+  %p.log
+  %button#Accept
+    Accept
+  %button#Disconnect
+    Disconnect
+
+%ul#Members
+
+- @content_for_javascript = capture do
+  = javascript_include_tag "index"

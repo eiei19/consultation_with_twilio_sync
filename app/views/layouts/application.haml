@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title
+      ConsultationWithTwilioSync
+    = stylesheet_link_tag    'application', media: 'all'
+    = yield :stylesheet
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    = javascript_include_tag '//static.twilio.com/libs/twiliojs/1.2/twilio.min.js'
+    = javascript_include_tag "https://media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.js"
+    = javascript_include_tag "https://media.twiliocdn.com/sdk/js/sync/v0.2/twilio-sync.js"
+
+  %body
+    = yield
+
+    - if @content_for_javascript
+      = @content_for_javascript
