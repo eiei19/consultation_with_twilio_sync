@@ -1,0 +1,11 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+
+development:
+  <<: *default
+  host: localhost
+  database: sync_dev
+  username: sync_dev
+  password: sync_dev
