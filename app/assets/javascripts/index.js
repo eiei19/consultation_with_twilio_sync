@@ -2,23 +2,19 @@ $(function() {
   var _syncMap;
   var _consultant;
 
-  class Consultant {
-    constructor(identity, topic) {
-      this.identity = identity;
-      this.topic = topic;
-      this.status = "";
-      $.trigger("initConsultant", this);
-    }
-
-    changeStatus(status) {
-      this.status = status;
-      _syncMap.set(this.identity, {status: this.status, topic: this.topic});
-      $.trigger("changedConsultantStatus", this);
-    }
-
-    goToOffline() {
-      _syncMap.remove(this.identity);
-    }
+  var Consultant = function(identity, topic) {
+    this.identity = identity;
+    this.topic = topic;
+    this.status = "";
+    $.trigger("initConsultant", this);
+  }
+  Consultant.prototype.changeStatus = function(status) {
+    this.status = status;
+    _syncMap.set(this.identity, {status: this.status, topic: this.topic});
+    $.trigger("changedConsultantStatus", this);
+  }
+  Consultant.prototype.goToOffline = function() {
+    _syncMap.remove(this.identity);
   }
 
   $.one("initConsultant", function (e, consultant) {
