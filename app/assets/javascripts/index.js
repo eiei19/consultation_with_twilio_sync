@@ -1,6 +1,6 @@
 $(function() {
   var _syncMap;
-  var _consultant
+  var _consultant;
 
   class Consultant {
     constructor(identity, topic) {
@@ -11,7 +11,7 @@ $(function() {
     }
 
     changeStatus(status) {
-      this.status = status
+      this.status = status;
       _syncMap.set(this.identity, {status: this.status, topic: this.topic});
       $.trigger("changedConsultantStatus", this);
     }
