@@ -1,17 +1,25 @@
-#IdentityForm
-  %input{type: "text", id: "Identity"}
-  %button#GoToOnline
-    Go
+.row
+  .col-md-12
+    #IdentityForm
+      .form-inline
+        %input{type: "text", id: "Identity", placeholder: "ID(半角英数)", class: "form-control"}
+        %input{type: "text", id: "Topic", placeholder: "相談にのれる内容", class: "form-control"}
+        %button#GoToOnline.btn.btn-success
+          オンラインになる
 
-#CallInfo
-  %p.name
-  %p.log
-  %button#Accept
-    Accept
-  %button#Disconnect
-    Disconnect
+    %p#UserInfo{style: "display: none;"}
 
-%ul#Members
+    %p#UserStatus.log.alert.alert-info{style: "display: none;"}
+
+    #CallOperations{style: "display: none;"}
+      %button#Accept.btn.btn-success
+        出る
+      %button#Disconnect.btn.btn-danger
+        切る
+
+    %hr
+
+    %ul#OnlineConsultants
 
 - @content_for_javascript = capture do
   = javascript_include_tag "index"
